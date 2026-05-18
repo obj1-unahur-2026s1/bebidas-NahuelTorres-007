@@ -1,9 +1,29 @@
-import example.pepita
+import TitoYBebidas.*
 
-describe "group of tests for pepita" {
+describe "grupo de tests para tito" {
 
-  test "pepita has initial energy" {
-    assert.equals(100, pepita.energy())
+  test "1. tito tiene una velocidad inicial de 0" {
+    assert.equals(0, tito.velocidad())
+  }
+
+  test "2. tito toma un Whisky, su velocidad ahora es de 7" {
+    tito.consumir(1, whisky)
+    assert.equals(7, tito.velocidad())
+  }
+
+  test "3. tito toma un Terere, su velocidad ahora es de 7" {
+    tito.consumir(1, terere)
+    assert.equals(7, tito.velocidad())
+  }
+
+  test "4. tito toma 15 Terere, su velocidad ahora es de 10.5" {
+    tito.consumir(15, terere)
+    assert.equals(10.5, tito.velocidad())
+  }
+
+  test "5. tito toma Cianuro, su velocidad ahora es de 0" {
+    tito.consumir(1, cianuro)
+    assert.equals(0, tito.velocidad())
   }
 
 }
